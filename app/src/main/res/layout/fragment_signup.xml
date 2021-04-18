@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.shahdarshil.playoff.user.signup.SignupViewModel"/>
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+                                                       android:layout_height="match_parent"
+                                                       tools:context=".user.signup.SignupFragment"
+                                                       android:id="@+id/signup_constraint_layout">
+        <com.google.android.material.textview.MaterialTextView
+                android:text="@string/signup_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/signup_textview"
+                android:textColor="@color/colorPrimary"
+                android:textSize="@dimen/signup_text_display_size"
+                android:textAllCaps="true" android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/textInputLayout" app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintVertical_bias="0.25" android:layout_marginTop="@dimen/margin_outside"
+                android:layout_marginEnd="@dimen/margin_outside" android:layout_marginStart="@dimen/margin_outside" android:layout_marginBottom="@dimen/margin_outside"/>
+
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/textInputLayout2"
+                                                               app:layout_constraintEnd_toStartOf="@+id/textInputLayout"
+                                                               app:layout_constraintStart_toStartOf="parent"
+                                                               app:layout_constraintHorizontal_bias="0.5"
+                                                               android:layout_marginStart="@dimen/margin_outside"
+                                                               android:layout_marginEnd="@dimen/margin_inside"
+                                                               app:helperTextEnabled="true"
+                                                               app:helperText="@string/firstname_helper_text"
+                                                               app:startIconDrawable="@drawable/baseline_person_24"
+                                                               app:errorEnabled="true"
+                                                               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                                               app:layout_constraintHorizontal_chainStyle="packed"
+                                                               app:layout_constraintTop_toBottomOf="@+id/signup_textview"
+                                                               app:layout_constraintBottom_toTopOf="@+id/textInputLayout3"
+                                                               app:layout_constraintVertical_chainStyle="packed"
+                                                               android:layout_marginBottom="@dimen/margin_inside"
+                                                               app:layout_constraintVertical_bias="0.25">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPersonName"
+                    android:ems="10"
+                    android:id="@+id/firstname_edittext" tools:layout_editor_absoluteY="147dp"
+                    tools:layout_editor_absoluteX="164dp" android:hint="@string/firstname_text" tools:text="FirstName"
+                    android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/textInputLayout"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                                               app:layout_constraintStart_toEndOf="@+id/textInputLayout2"
+                                                               app:layout_constraintHorizontal_bias="0.5"
+                                                               app:errorEnabled="true"
+                                                               app:helperTextEnabled="true"
+                                                               app:helperText="@string/lastname_helper_text"
+                                                               android:layout_marginEnd="@dimen/margin_outside"
+                                                               android:layout_marginStart="@dimen/margin_inside"
+                                                               app:layout_constraintBaseline_toBaselineOf="@+id/textInputLayout2">
+            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent"
+                                                                     android:layout_height="match_parent"
+                                                                     android:id="@+id/lastname_edittext"
+                                                                     android:hint="@string/lastname_text"
+                                                                     tools:text="LastName" android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/textInputLayout4"
+                                                               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                                               app:layout_constraintTop_toBottomOf="@+id/textInputLayout3"
+                                                               app:layout_constraintBottom_toTopOf="@+id/textInputLayout5"
+                                                               app:layout_constraintStart_toStartOf="@+id/textInputLayout3"
+                                                               app:layout_constraintEnd_toEndOf="parent"
+                                                               app:passwordToggleEnabled="true"
+                                                               app:errorEnabled="true"
+                                                               app:helperTextEnabled="true"
+                                                               app:startIconDrawable="@drawable/baseline_vpn_key_24"
+                                                               app:helperText="@string/password_helper_text"
+                                                               android:layout_marginEnd="@dimen/margin_outside"
+                                                               android:layout_marginStart="@dimen/margin_outside"
+                                                               android:layout_marginTop="@dimen/margin_inside"
+                                                               android:layout_marginBottom="@dimen/margin_inside">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/password_edittext" tools:layout_editor_absoluteY="265dp"
+                    tools:layout_editor_absoluteX="114dp" android:hint="@string/password_text" tools:text="HelloWorld"
+                    android:singleLine="true" android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/textInputLayout5"
+                                                               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                                               app:passwordToggleEnabled="true"
+                                                               app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
+                                                               app:layout_constraintStart_toStartOf="@+id/textInputLayout4"
+                                                               app:layout_constraintEnd_toEndOf="@+id/textInputLayout4"
+                                                               app:startIconDrawable="@drawable/baseline_vpn_key_24"
+                                                               app:errorEnabled="true"
+                                                               app:helperText="@string/confirm_password_helper_text"
+                                                               android:layout_marginEnd="@dimen/margin_outside"
+                                                               android:layout_marginStart="@dimen/margin_outside"
+                                                               android:layout_marginTop="@dimen/margin_inside"
+                                                               android:layout_marginBottom="@dimen/margin_inside"
+                                                               app:layout_constraintBottom_toTopOf="@+id/textInputLayout6">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:ems="10"
+                    android:id="@+id/confirm_password_edittext" tools:layout_editor_absoluteY="38@dimen/margin_inside"
+                    tools:layout_editor_absoluteX="6@dimen/margin_inside" android:hint="@string/confirm_password_text"
+                    android:inputType="textPassword" tools:text="HelloWorld" android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="match_parent"
+                                                               android:layout_height="wrap_content"
+                                                               android:id="@+id/textInputLayout3"
+                                                               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                                                               app:layout_constraintTop_toBottomOf="@+id/textInputLayout2"
+                                                               app:layout_constraintBottom_toTopOf="@+id/textInputLayout4"
+                                                               app:layout_constraintStart_toStartOf="@+id/textInputLayout2"
+                                                               app:layout_constraintEnd_toEndOf="@+id/textInputLayout"
+                                                               app:helperTextEnabled="true"
+                                                               app:startIconDrawable="@drawable/baseline_mail_24"
+                                                               app:helperText="@string/email_helper_text"
+                                                               app:errorEnabled="true"
+                                                               android:layout_marginEnd="@dimen/margin_outside"
+                                                               android:layout_marginStart="@dimen/margin_outside"
+                                                               android:layout_marginTop="@dimen/margin_inside"
+                                                               android:layout_marginBottom="@dimen/margin_inside">
+            <com.google.android.material.textfield.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:ems="10"
+                    android:id="@+id/email_edittext" tools:layout_editor_absoluteY="486dp"
+                    tools:layout_editor_absoluteX="76dp" android:hint="@string/hint_email"
+                    tools:text="example@email.com" android:singleLine="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout android:layout_width="0dp"
+                                                               android:layout_height="wrap_content"
+                                                               style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+                                                               app:helperTextEnabled="true"
+                                                               app:helperText="@string/otp_helper_text"
+                                                               app:layout_constraintEnd_toStartOf="@+id/otp_button"
+                                                               app:layout_constraintStart_toStartOf="@+id/textInputLayout5"
+                                                               app:layout_constraintTop_toBottomOf="@+id/textInputLayout5"
+                                                               android:layout_marginTop="@dimen/margin_inside"
+                                                               android:id="@+id/textInputLayout6"
+                                                               app:layout_constraintBottom_toBottomOf="parent"
+                                                               android:layout_marginEnd="@dimen/margin_inside">
+            <com.google.android.material.textfield.TextInputEditText android:layout_width="match_parent"
+                                                                     android:layout_height="match_parent"
+                                                                     android:hint="@string/otp_text"
+                                                                     android:enabled="false"
+                                                                     android:id="@+id/otp_edittext"
+                                                                     android:maxLength="6"
+                                                                     android:inputType="number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
+                                                           android:layout_height="0dp"
+                                                           android:text="@string/generate_otp_text"
+                                                           app:layout_constraintEnd_toEndOf="@+id/textInputLayout5"
+                                                           android:id="@+id/otp_button"
+                                                           android:layout_marginStart="@dimen/margin_inside"
+                                                           app:layout_constraintStart_toEndOf="@+id/textInputLayout6"
+                                                           app:layout_constraintTop_toTopOf="@+id/textInputLayout6"
+                                                           app:layout_constraintBottom_toBottomOf="@+id/textInputLayout6"
+                                                           android:onClick="@{() -> viewModel.generateOtp()}"
+                                                           android:layout_marginBottom="16dp"
+                                                           android:layout_marginTop="4dp"/>
+        <com.google.android.material.button.MaterialButton
+                android:text="@string/signup_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/register_button"
+                style="@style/Widget.AppCompat.Button.Colored"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:onClick="@{() -> viewModel.signupPressed()}"
+                android:enabled="false"
+                android:textSize="@dimen/button_text_size"
+                android:layout_marginEnd="@dimen/margin_outside" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/margin_outside"/>
+        <com.google.android.material.button.MaterialButton
+                android:text="@string/cancel_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:id="@+id/cancel_button"
+                style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:textSize="@dimen/button_text_size"
+                android:onClick="@{() -> viewModel.navigateToLoginFragment()}"
+                app:layout_constraintBaseline_toBaselineOf="@+id/register_button"
+                app:layout_constraintEnd_toStartOf="@+id/register_button" android:layout_marginEnd="@dimen/margin_outside"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
