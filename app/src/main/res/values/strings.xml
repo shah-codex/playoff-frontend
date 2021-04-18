@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">PlayOff</string>
+
+    <string name="hint_email">E-mail</string>
+    <string name="hint_password">Password</string>
+    <string name="login_text">Login</string>
+
+    <string name="signup_text">Signup</string>
+    <string name="firstname_text">First Name</string>
+    <string name="lastname_text">Last Name</string>
+    <string name="password_text">Password</string>
+    <string name="confirm_password_text">Confirm Password</string>
+    <string name="otp_text">OTP</string>
+    <string name="password_helper_text">Minimum 8 characters</string>
+    <string name="email_helper_text">Ex: example@email.com</string>
+    <string name="cancel_text">Cancel</string>
+    <string name="firstname_helper_text">Ex: Bob</string>
+    <string name="lastname_helper_text">Ex: Roger</string>
+    <string name="otp_helper_text">6 digits</string>
+    <string name="generate_otp_text">Generate otp</string>
+    <string name="confirm_password_helper_text">Re-enter Password</string>
+    <string name="resend_text">Resend</string>
+
+    <string name="recent_text">Recent</string>
+    <string name="tournament_text">Tournaments</string>
+    <string name="team_text">Teams</string>
+
+    <string name="create_text">Create</string>
 </resources>
