@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
+            app:startDestination="@id/recent_fragment"
+            android:id="@+id/detail_navigation_graph">
+
+    <fragment
+        android:id="@+id/recent_fragment"
+        android:name="com.shahdarshil.playoff.player.update.RecentFragment"
+        android:label="recent_fragment"
+        tools:layout="@layout/fragment_recent">
+
+    </fragment>
+</navigation>
