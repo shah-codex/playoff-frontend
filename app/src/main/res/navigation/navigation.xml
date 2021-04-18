@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/navigation.xml"
+            app:startDestination="@id/login_fragment">
+    <fragment
+            android:id="@+id/login_fragment"
+            android:name="com.shahdarshil.playoff.user.login.LoginFragment"
+            tools:layout="@layout/fragment_login">
+        <action android:id="@+id/action_login_fragment_to_signup_fragment" app:destination="@id/signup_fragment"
+                app:enterAnim="@anim/slide_up"/>
+        <action android:id="@+id/action_login_fragment_to_detail_activity" app:destination="@id/detail_activity"
+                app:enterAnim="@anim/slide_left"/>
+    </fragment>
+
+    <fragment android:id="@+id/signup_fragment"
+              android:name="com.shahdarshil.playoff.user.signup.SignupFragment"
+              tools:layout="@layout/fragment_signup">
+    </fragment>
+
+    <activity android:id="@+id/detail_activity"
+              android:name="com.shahdarshil.playoff.DetailActivity"
+              tools:layout="@layout/activity_detail">
+
+    </activity>
+
+
+</navigation>
