@@ -15,15 +15,13 @@ import com.shahdarshil.playoff.player.update.RecentFragment
 
 class DetailActivity : AppCompatActivity() {
     private lateinit var viewModel: DetailViewModel
-    private lateinit var viewModelFactory: DetailViewModelFactory
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val binding: ActivityDetailBinding = DataBindingUtil.setContentView(this, R.layout.activity_detail)
 
-        viewModelFactory = DetailViewModelFactory(application)
-        viewModel = ViewModelProvider(this, viewModelFactory).get(DetailViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(DetailViewModel::class.java)
 
         binding.viewModel = viewModel
 

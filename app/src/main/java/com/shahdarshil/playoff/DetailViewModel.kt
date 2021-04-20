@@ -8,7 +8,7 @@ import androidx.lifecycle.ViewModel
 /**
  * Created by shah on 18 April, 2021.
  */
-class DetailViewModel(private val application: Application) : ViewModel() {
+class DetailViewModel() : ViewModel() {
     private val _createFloatingActionButtonText = MutableLiveData<String>("Create")
 
     val createFloatingActionButtonText: LiveData<String>
