@@ -11,6 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import com.shahdarshil.playoff.databinding.ActivityDetailBinding
+import com.shahdarshil.playoff.player.tournament.TournamentFragment
 import com.shahdarshil.playoff.player.update.RecentFragment
 
 class DetailActivity : AppCompatActivity() {
@@ -29,7 +30,7 @@ class DetailActivity : AppCompatActivity() {
 
         val fragmentList = arrayListOf<Fragment>(
             RecentFragment(),
-            RecentFragment(),
+            TournamentFragment(),
             RecentFragment()
         )
 
