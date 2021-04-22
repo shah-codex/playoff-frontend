@@ -1,12 +1,15 @@
 package com.shahdarshil.playoff.network
 
 import com.google.gson.GsonBuilder
+import com.shahdarshil.playoff.network.datamodel.Tournament
 import com.shahdarshil.playoff.network.datamodel.User
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Body
+import retrofit2.http.GET
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 /**
  * Created by shah on 14 April, 2021.
@@ -22,6 +25,9 @@ interface PlayoffApiService {
 
     @POST("/user/authenticate")
     suspend fun requestOtp(@Body user: User): Response<Any>
+
+    @GET("/tournament/{location}")
+    suspend fun getTournaments(@Path("location") location: String): Response<List<Tournament>?>
 }
 
 private val retrofit = Retrofit.Builder()
