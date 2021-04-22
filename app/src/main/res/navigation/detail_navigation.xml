@@ -11,4 +11,12 @@
         tools:layout="@layout/fragment_recent">
 
     </fragment>
+
+    <fragment android:id="@+id/tournament_fragment"
+               android:name="com.shahdarshil.playoff.player.tournament.TournamentFragment"
+               android:label="tournament_fragment"
+               tools:layout="@layout/fragment_tournament">
+
+    </fragment>
+
 </navigation>
