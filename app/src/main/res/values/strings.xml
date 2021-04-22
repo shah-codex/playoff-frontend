@@ -26,4 +26,12 @@
     <string name="team_text">Teams</string>
 
     <string name="create_text">Create</string>
+
+    <string name="start_date_text">Starts at</string>
+    <string name="players_required_text">Players required</string>
+
+    <string name="players_required_text_placeholder">: %1$d - %2$d per team</string>
+
+    <string name="chip_any_text">Any</string>
+    <string name="chip_bhavnagar_text">Bhavnagar</string>
 </resources>
