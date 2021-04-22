@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable name="viewModel"
+                  type="com.shahdarshil.playoff.player.tournament.TournamentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".player.tournament.TournamentFragment"
+            android:id="@+id/tournament_constraint_layout">
+
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/tournament_list" android:padding="8dp" android:clipToPadding="false"
+                app:layout_constraintTop_toBottomOf="@+id/chipGroup" app:layout_constraintHorizontal_bias="0.5"/>
+        <com.google.android.material.chip.ChipGroup
+                android:layout_width="0dp" app:singleSelection="true"
+                android:layout_height="wrap_content" app:singleLine="true" app:chipSpacing="4dp"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="8dp"
+                app:checkedChip="@id/chip_any" app:selectionRequired="true"
+                android:layout_marginEnd="16dp" android:layout_marginStart="16dp" android:id="@+id/chipGroup"
+                app:layout_constraintHorizontal_bias="0.5" app:layout_constraintBottom_toTopOf="@+id/tournament_list"
+                app:layout_constraintVertical_chainStyle="packed" app:layout_constraintVertical_bias="0.0"
+                android:layout_marginBottom="4dp">
+            <com.google.android.material.chip.Chip android:layout_width="wrap_content"
+                                                   android:layout_height="wrap_content"
+                                                   android:id="@+id/chip_any"
+                                                   android:onClick="@{() -> viewModel.onChipClicked()}"
+                                                   tools:text="Any"
+                                                   android:text="@string/chip_any_text"
+                                                   style="@style/Widget.MaterialComponents.Chip.Filter"/>
+            <com.google.android.material.chip.Chip android:layout_width="wrap_content"
+                                                   android:layout_height="wrap_content"
+                                                   android:onClick="@{() -> viewModel.onChipClicked()}"
+                                                   android:text="@string/chip_bhavnagar_text"
+                                                   android:id="@+id/chip_bhavnagar"
+                                                   tools:text="Bhavnagar"
+                                                   style="@style/Widget.MaterialComponents.Chip.Filter"/>
+        </com.google.android.material.chip.ChipGroup>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
