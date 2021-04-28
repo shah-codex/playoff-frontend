@@ -2,7 +2,7 @@ package com.shahdarshil.playoff
 
 import java.security.MessageDigest
 import java.security.NoSuchAlgorithmException
-import java.sql.Date
+import java.text.ParseException
 import java.text.SimpleDateFormat
 import java.util.*
 
@@ -19,9 +19,20 @@ fun String.createHash(): String {
     return digest?.digest(this.toByteArray())?.joinToString("") { "%02x".format(it) } ?: ""
 }
 
-fun Int.toDate(): String {
-    val dateFormatter = SimpleDateFormat("dd-mm-yyyy hh:mm", Locale.US)
-    val date = Date(this.toLong() * 1000)
+fun Long.toDate(): String {
+    val dateFormatter = SimpleDateFormat("d-M-y H:m", Locale.US)
+    val date = Date(this * 1000)
 
     return dateFormatter.format(date)
+}
+
+fun String.toUnixTimestamp(): Long {
+    val formatter = SimpleDateFormat("d-M-y H:m", Locale.US)
+    val date = try {
+        formatter.parse(this)
+    } catch(e: ParseException) {
+        null
+    }
+
+    return date?.time?.div(1000) ?: 0
 }
