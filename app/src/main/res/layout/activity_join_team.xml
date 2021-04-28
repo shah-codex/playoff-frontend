@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable name="viewModel"
+                  type="com.shahdarshil.playoff.player.team.JoinTeamViewModel" />
+
+        <variable name="team"
+                  type="com.shahdarshil.playoff.network.datamodel.Team" />
+
+        <variable name="tournament"
+                  type="com.shahdarshil.playoff.network.datamodel.Tournament" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".player.team.JoinTeamActivity">
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/team_name_text_join_team"
+                android:layout_marginEnd="16dp" app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
+                app:layout_constraintTop_toTopOf="parent" android:layout_marginTop="16dp" tools:text="Champions"
+                android:textStyle="bold" android:textSize="24sp" android:text="@{team.name}"
+                android:textColor="@color/material_on_surface_emphasis_high_type" android:textAlignment="center"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content" android:id="@+id/game_name_text_join_team"
+                app:layout_constraintStart_toStartOf="@+id/team_name_text_join_team"
+                app:layout_constraintEnd_toEndOf="@+id/team_name_text_join_team" android:textStyle="bold"
+                tools:text="Soccer" android:textColor="@color/material_on_surface_emphasis_medium"
+                android:textAlignment="textEnd" android:textSize="18sp"
+                android:text="@{tournament != null ? tournament.game : @string/no_team_placeholder_text}"
+                app:layout_constraintTop_toBottomOf="@+id/team_name_text_join_team" android:layout_marginTop="8dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                android:id="@+id/player_list_recycler_view_join_team" android:clipToPadding="false" android:padding="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/join_button_join_team"
+                app:layout_constraintTop_toBottomOf="@+id/playing_players_text_join_team"/>
+        <com.google.android.material.button.MaterialButton
+                android:text="@string/join_text"
+                android:layout_width="0dp"
+                android:onClick="@{() -> viewModel.joinTeam()}"
+                android:layout_height="wrap_content" android:id="@+id/join_button_join_team"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="16dp" android:layout_marginEnd="16dp"
+                app:layout_constraintStart_toEndOf="@+id/cancel_button_join_team"
+                app:layout_constraintHorizontal_bias="0.5" android:layout_marginStart="8dp"/>
+        <com.google.android.material.button.MaterialButton
+                android:text="@string/cancel_text"
+                android:onClick="@{() -> viewModel.onCancelPressed()}"
+                android:layout_width="0dp" style="@style/Widget.MaterialComponents.Button.TextButton"
+                android:layout_height="wrap_content" android:id="@+id/cancel_button_join_team"
+                app:layout_constraintStart_toStartOf="parent" app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toStartOf="@+id/join_button_join_team"
+                app:layout_constraintBaseline_toBaselineOf="@+id/join_button_join_team" android:layout_marginEnd="8dp"
+                android:layout_marginStart="16dp"/>
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/playing_players_text_join_team"
+                tools:text="Playing 3/4"
+                app:teamPlayingPlayers="@{team}"
+                app:layout_constraintTop_toBottomOf="@+id/game_name_text_join_team"
+                app:layout_constraintStart_toStartOf="@+id/game_name_text_join_team"
+                app:layout_constraintEnd_toEndOf="@+id/game_name_text_join_team" android:layout_marginTop="8dp"
+                android:textAlignment="center" android:textStyle="bold"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
