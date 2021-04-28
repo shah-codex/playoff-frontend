@@ -1,5 +1,6 @@
 package com.shahdarshil.playoff.player.tournament
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -29,8 +30,10 @@ class TournamentFragment : Fragment() {
         viewModel.getTournaments()
 
         val adapter = TournamentListAdapter(TournamentClickListener {
-            // TODO change this to redirect user to next page using tournament _id.
             Toast.makeText(context, "pressed $it", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, JoinTournamentActivity::class.java)
+            intent.putExtra("tournamentId", it)
+            startActivity(intent)
         })
 
         binding.tournamentList.adapter = adapter
