@@ -101,4 +101,9 @@ class SignupViewModel : ViewModel() {
     fun onDoneNavigating() {
         _navigateToLogin.value = false
     }
+
+    override fun onCleared() {
+        super.onCleared()
+        coroutineJob.cancel()
+    }
 }
