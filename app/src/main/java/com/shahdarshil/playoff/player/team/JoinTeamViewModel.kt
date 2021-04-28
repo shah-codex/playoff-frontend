@@ -60,7 +60,6 @@ class JoinTeamViewModel : ViewModel() {
                 if(response != null && response.isSuccessful) {
                     _team.value = response.body()
                     getTournament(response.body()?.tournamentId)
-                    println(response.body())
                 }
             }
         }
