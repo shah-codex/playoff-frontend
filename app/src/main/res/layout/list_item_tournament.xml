@@ -12,7 +12,7 @@
                   type="com.shahdarshil.playoff.player.tournament.TournamentClickListener" />
     </data>
 
-    <androidx.cardview.widget.CardView android:layout_width="match_parent"
+    <com.google.android.material.card.MaterialCardView android:layout_width="match_parent"
                                        android:layout_height="wrap_content"
                                        app:cardCornerRadius="2dp"
                                        app:cardElevation="7dp" app:contentPadding="2dp" app:cardMaxElevation="4dp"
@@ -49,7 +49,7 @@
             <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" android:id="@+id/start_date_text"
-                    app:setStartDate="@{tournament}"
+                    app:startDate="@{tournament}"
                     app:layout_constraintStart_toStartOf="@+id/required_players_text"
                     app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
                     tools:text=": 03-09-2021"
@@ -101,5 +101,5 @@
                     android:layout_marginStart="8dp" android:visibility="invisible"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </layout>
