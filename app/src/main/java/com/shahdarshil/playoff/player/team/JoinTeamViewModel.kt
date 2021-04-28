@@ -59,26 +59,28 @@ class JoinTeamViewModel : ViewModel() {
             viewModelScope.launch {
                 if(response != null && response.isSuccessful) {
                     _team.value = response.body()
-                    getTournament(response.body()?.tournamentId!!)
+                    getTournament(response.body()?.tournamentId)
                     println(response.body())
                 }
             }
         }
     }
 
-    private suspend fun getTournament(tournamentId: String) {
-        coroutineScope.launch {
-            val response = try {
-                PlayoffApi.retrofitService.getTournament(tournamentId)
-            } catch(e: ConnectException) {
-                null
-            }
+    private suspend fun getTournament(tournamentId: String?) {
+        tournamentId?.let {
+            coroutineScope.launch {
+                val response = try {
+                    PlayoffApi.retrofitService.getTournament(tournamentId)
+                } catch (e: ConnectException) {
+                    null
+                }
 
-            viewModelScope.launch {
-                if (response != null && response.isSuccessful) {
-                    _tournament.value = response.body()
-                } else {
-                    _tournament.value = null
+                viewModelScope.launch {
+                    if (response != null && response.isSuccessful) {
+                        _tournament.value = response.body()
+                    } else {
+                        _tournament.value = null
+                    }
                 }
             }
         }
