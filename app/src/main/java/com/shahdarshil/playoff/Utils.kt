@@ -20,14 +20,14 @@ fun String.createHash(): String {
 }
 
 fun Long.toDate(): String {
-    val dateFormatter = SimpleDateFormat("d-M-y H:m", Locale.US)
+    val dateFormatter = SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.US)
     val date = Date(this * 1000)
 
     return dateFormatter.format(date)
 }
 
 fun String.toUnixTimestamp(): Long {
-    val formatter = SimpleDateFormat("d-M-y H:m", Locale.US)
+    val formatter = SimpleDateFormat("dd-MM-yyyy HH:mm", Locale.US)
     val date = try {
         formatter.parse(this)
     } catch(e: ParseException) {
