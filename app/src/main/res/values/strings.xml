@@ -20,6 +20,7 @@
     <string name="generate_otp_text">Generate otp</string>
     <string name="confirm_password_helper_text">Re-enter Password</string>
     <string name="resend_text">Resend</string>
+    <string name="forgot_password_question">Forgot password?</string>
 
     <string name="recent_text">Recent</string>
     <string name="tournament_text">Tournaments</string>
@@ -74,4 +75,7 @@
         <item>Any</item>
         <item>Bhavnagar</item>
     </string-array>
+
+    <string name="forgot_password_text">Forgot password</string>
+    <string name="change_text">Change</string>
 </resources>
