@@ -7,7 +7,7 @@ import com.google.gson.annotations.SerializedName
  */
 data class Tournament(
     @SerializedName("tournament_id")
-    val _id: String,
+    val _id: String? = null,
     val title: String,
     val game: String,
     @SerializedName("min_players")
@@ -20,8 +20,12 @@ data class Tournament(
     val maximumTeams: Int? = null,
     val location: String,
     @SerializedName("start_date")
-    val startDate: Int,
+    val startDate: Long,
     @SerializedName("end_date")
-    val endDate: Int? = null,
+    val endDate: Long? = null,
     val description: String? = null,
+    @SerializedName("teams_participated")
+    val teamsParticipated: Int? = null,
+    @SerializedName("creator")
+    val creator: String? = null
 )
