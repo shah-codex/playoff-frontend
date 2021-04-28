@@ -23,7 +23,6 @@
               android:name="com.shahdarshil.playoff.DetailActivity"
               tools:layout="@layout/activity_detail">
 
+        <argument android:name="email" app:argType="string"/>
     </activity>
-
-
 </navigation>

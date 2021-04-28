@@ -8,15 +8,22 @@
         android:id="@+id/recent_fragment"
         android:name="com.shahdarshil.playoff.player.update.RecentFragment"
         android:label="recent_fragment"
-        tools:layout="@layout/fragment_recent">
-
-    </fragment>
+        tools:layout="@layout/fragment_recent"/>
 
     <fragment android:id="@+id/tournament_fragment"
                android:name="com.shahdarshil.playoff.player.tournament.TournamentFragment"
                android:label="tournament_fragment"
-               tools:layout="@layout/fragment_tournament">
+               tools:layout="@layout/fragment_tournament"/>
 
-    </fragment>
+    <fragment android:id="@+id/join_tournament_fragment"
+              android:name="com.shahdarshil.playoff.player.tournament.JoinTournamentActivity"
+              android:label="join_tournament_fragment"
+              tools:layout="@layout/activity_join_tournament"/>
+
+    <dialog android:id="@+id/create_team_dialog"
+            android:name="com.shahdarshil.playoff.player.team.CreateTeamDialog"
+            tools:layout="@layout/dialog_create_team">
+
+    </dialog>
 
 </navigation>
