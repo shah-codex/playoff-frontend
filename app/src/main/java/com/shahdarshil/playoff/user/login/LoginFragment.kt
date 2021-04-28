@@ -66,11 +66,10 @@ class LoginFragment : Fragment() {
             }
         })
 
-
         viewModel.loginSuccessful.observe(viewLifecycleOwner, Observer<Boolean?> {
             it?.let {
                 if (it) {
-                    val directions = LoginFragmentDirections.actionLoginFragmentToDetailActivity()
+                    val directions = LoginFragmentDirections.actionLoginFragmentToDetailActivity(binding.emailEditText.text.toString())
                     findNavController().navigate(directions)
                 } else {
                     binding.passwordEditText.setText("")
