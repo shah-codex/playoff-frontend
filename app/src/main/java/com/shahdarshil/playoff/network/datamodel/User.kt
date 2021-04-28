@@ -11,7 +11,7 @@ import kotlinx.parcelize.Parcelize
 data class User(
     @SerializedName("name")
     val username: String?,
-    val password: String,
+    val password: String?,
     val email: String,
     @SerializedName("oneTimePassword")
     val otp: String?
