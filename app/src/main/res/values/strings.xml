@@ -34,4 +34,44 @@
 
     <string name="chip_any_text">Any</string>
     <string name="chip_bhavnagar_text">Bhavnagar</string>
+
+    <string name="team_playing_text_placeholder">%1$d/%2$d</string>
+    <string name="team_playing_text">Playing</string>
+    <string name="no_team_placeholder_text">Not Participated</string>
+
+    <string name="team_name_text">Team Name</string>
+    <string name="create_team_text">Create Team</string>
+
+    <string name="join_text">Join</string>
+    <string name="unjoin_text">Un-join</string>
+    <string name="start_date_text_placeholder">Starts at : %1$s</string>
+    <string name="end_date_text_placeholder">Ends at : %1$s</string>
+    <string name="players_per_team_text">Players per team</string>
+    <string name="minimum_teams_text_placeholder">Minimum ~ %1$d</string>
+    <string name="maximum_teams_text_placeholder">Maximum ~ %1$d</string>
+    <string name="teams_joined_text_placeholder">Teams joined\n(minimum ~ %1$d)</string>
+    <string name="pattern_placeholder">~~~~~~~~~~~~~~~~~~~~~~~</string>
+    <string name="total_teams_joined_text_placeholder">%1$d/%2$d</string>
+    <string name="description_text">Description:</string>
+
+    <string name="create_tournament_text">Create tournament</string>
+    <string name="title_text">Title</string>
+    <string name="game_name_text">Game name</string>
+    <string name="tournament_dates_text">Tournament dates</string>
+    <string name="end_date_text">Ends at</string>
+    <string name="date_input_hint">dd-mm-yyyy</string>
+    <string name="time_input_hint">hh:mm</string>
+    <string name="teams_required_text">Teams Required</string>
+    <string name="minimum_teams_text">Minimum teams</string>
+    <string name="maximum_teams_text">Maximum teams</string>
+    <string name="minimum_players_text">Minimum players</string>
+    <string name="maximum_players_text">Maximum players</string>
+    <string name="location_text">Location</string>
+
+    <string name="team_playing_players_text">Playing %1$d/%2$d</string>
+
+    <string-array name="location_array">
+        <item>Any</item>
+        <item>Bhavnagar</item>
+    </string-array>
 </resources>
