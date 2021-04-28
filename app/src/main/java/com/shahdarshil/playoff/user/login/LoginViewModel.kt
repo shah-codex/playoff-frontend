@@ -39,6 +39,11 @@ class LoginViewModel : ViewModel() {
     val navigateToSignup: LiveData<Boolean>
         get() = _navigateToSignup
 
+    private val _navigateToForgotPassword = MutableLiveData<Boolean?>()
+
+    val navigateToForgotPassword: LiveData<Boolean?>
+        get() = _navigateToForgotPassword
+
     fun checkEmail(email: String) {
         _emailIsValid.value = email.isEmail()
     }
@@ -83,8 +88,13 @@ class LoginViewModel : ViewModel() {
         _navigateToSignup.value = true
     }
 
+    fun navigateToForgotPassword() {
+        _navigateToForgotPassword.value = true
+    }
+
     fun onDoneNavigating() {
         _navigateToSignup.value = false
+        _navigateToForgotPassword.value = null
     }
 
     override fun onCleared() {

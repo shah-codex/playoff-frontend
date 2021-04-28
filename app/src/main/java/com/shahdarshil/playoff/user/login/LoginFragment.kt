@@ -43,8 +43,8 @@ class LoginFragment : Fragment() {
 
         viewModel.navigateToSignup.observe(viewLifecycleOwner, Observer<Boolean> {
             if(it) {
-                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignupFragment())
                 viewModel.onDoneNavigating()
+                findNavController().navigate(LoginFragmentDirections.actionLoginFragmentToSignupFragment())
             }
         })
 
@@ -53,6 +53,18 @@ class LoginFragment : Fragment() {
                 binding.emailTextfieldLayout.error = "Please enter a valid email address"
             } else {
                 binding.emailTextfieldLayout.isErrorEnabled = false
+            }
+        })
+
+        viewModel.navigateToForgotPassword.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                if(!binding.emailTextfieldLayout.isErrorEnabled) {
+                    findNavController().navigate(
+                        LoginFragmentDirections
+                            .actionLoginFragmentToForgotPassword(binding.emailEditText.text.toString())
+                    )
+                    viewModel.onDoneNavigating()
+                }
             }
         })
 
