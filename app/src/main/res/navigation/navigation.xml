@@ -12,11 +12,19 @@
                 app:enterAnim="@anim/slide_up"/>
         <action android:id="@+id/action_login_fragment_to_detail_activity" app:destination="@id/detail_activity"
                 app:enterAnim="@anim/slide_left"/>
+        <action android:id="@+id/action_login_fragment_to_forgot_password" app:destination="@id/forgot_password"/>
     </fragment>
 
     <fragment android:id="@+id/signup_fragment"
               android:name="com.shahdarshil.playoff.user.signup.SignupFragment"
               tools:layout="@layout/fragment_signup">
+    </fragment>
+
+    <fragment android:id="@+id/forgot_password"
+              android:name="com.shahdarshil.playoff.user.forgotpassword.ForgotPasswordFragment"
+              tools:layout="@layout/fragment_forgot_password">
+
+        <argument android:name="email" app:argType="string"/>
     </fragment>
 
     <activity android:id="@+id/detail_activity"
