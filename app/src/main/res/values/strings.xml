@@ -78,4 +78,6 @@
 
     <string name="forgot_password_text">Forgot password</string>
     <string name="change_text">Change</string>
+
+    <string name="no_participate_text">No tournaments or teams participated or created</string>
 </resources>
