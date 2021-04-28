@@ -24,6 +24,9 @@ interface PlayoffApiService {
     @POST("/user/authenticate")
     suspend fun requestOtp(@Body user: User): Response<Any>
 
+    @POST("/user/forgot-password")
+    suspend fun forgotPassword(@Body user: User): Response<User>
+
     @GET("/tournament/{location}")
     suspend fun getTournaments(@Path("location") location: String): Response<List<Tournament>?>
 
