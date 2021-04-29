@@ -27,8 +27,6 @@ class TournamentFragment : Fragment() {
 
         binding.viewModel = viewModel
 
-        viewModel.getTournaments()
-
         val adapter = TournamentListAdapter(TournamentClickListener {
             Toast.makeText(context, "pressed $it", Toast.LENGTH_SHORT).show()
             val intent = Intent(context, JoinTournamentActivity::class.java)
@@ -54,5 +52,11 @@ class TournamentFragment : Fragment() {
         })
 
         return binding.root
+    }
+
+    override fun onResume() {
+        super.onResume()
+
+        viewModel.getTournaments()
     }
 }
