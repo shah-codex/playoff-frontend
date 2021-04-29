@@ -261,7 +261,6 @@
         <EditText
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:inputType="textPersonName"
                 android:ems="10"
                 android:id="@+id/description_edit_text_create_tournament"
                 android:hint="@string/description_text"
@@ -269,7 +268,8 @@
                 app:layout_constraintEnd_toEndOf="@+id/location_text_placeholder_create_tournament"
                 app:layout_constraintHorizontal_bias="0.475"
                 app:layout_constraintTop_toBottomOf="@+id/location_spinner_create_tournament"
-                android:layout_marginTop="16dp" android:imeOptions="flagNoPersonalizedLearning|flagNoEnterAction"/>
+                android:layout_marginTop="16dp"
+                android:inputType="textMultiLine"/>
 
         <com.google.android.material.button.MaterialButton android:layout_width="wrap_content"
                                                            android:layout_height="wrap_content"
